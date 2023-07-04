@@ -65,7 +65,8 @@ In this method, the object's alignment is indifferent since the distribution is 
 
 The original algorithm working principle is the following: it takes a sample of points on the surface of each object. Then it calculates the pairwise Euclidean distances for all these points and stores them in a 2D matrix. The distances are then normalized (concerning the maximum distance of each object) and converted into a histogram with a fixed number of evenly spaced bins. Instead of storing the frequency (number of points in the point cloud), the histogram uses the probability density due to random sampling. These discrete probability distributions represent the shapes of the objects in the point cloud. These distributions are then compared using the Minkowski distance - formula shown in equation bellow:
 
-    $$D(X,\\ Y)=\\sum\_{i=1}^{n}\|x\_{i}-y\_{i}\|$$
+$$\\label{eq:eq_minkowski_distance}
+D(X,\\ Y)=\\sum\_{i=1}^{n}\|x\_{i}-y\_{i}\|$$
 
 The Minkowski distance is the sum of the absolute differences between the columns of the histograms - it is also important to mention that other metrics can be used, like the Bhattacharya and Chi-Square Distances.
 
