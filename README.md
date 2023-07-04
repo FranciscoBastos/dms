@@ -113,7 +113,8 @@ Silva made some changes to the original algorithm's inner workings. The modifica
 5. Convert the distance matrix into a histogram with a fixed number of evenly spaced bins.
 
 6. Compare the histograms using the new Minkowski-Silva distance:
-    $$DMS(X,\ Y)=\sum_{i=1}^{N_{bins}}\left [\frac{|x_{i}-y_{i}|}{Counts_{total 1} + Counts_{total 2}}\right ]$$
+
+$$DMS(X,\ Y)=\sum_{i=1}^{N_{bins}}\left [\frac{|x_{i}-y_{i}|}{Counts_{total 1} + Counts_{total 2}}\right ]$$
 
 The modifications allowed the newly proposed method to give a faster, more accurate similarity score between the two maps since it considers **all of the data set points**. If the pairwise Euclidean distance were still used for all the data points, the computer would run out of processing power while evaluating the similarity between the two maps. So instead of using the pairwise Euclidean distance, we opted first to find each of the sample's centroids, then calculate the (Euclidean) distance from an observed point to that centroid (which ensures a better computational performance), and then fill the 2D distance matrix with the outputted results.
 
